@@ -1,48 +1,39 @@
 {
-  "name": "@brendangooch/random",
-  "version": "1.0.1",
-  "description": "",
-  "author": "B Gooch <brendangooch@gmail.com>",
-  "license": "MIT",
-  "type": "module",
-  "scripts": {
-    "pretest": "clear && npm run remove-tmp && tsc --outdir tmp",
-    "posttest": "npm run remove-tmp",
-    "prebuild": "npm run remove-lib",
-    "prepack": "npm run build",
-    "remove-tmp": "rm -rf tmp",
-    "remove-lib": "rm -rf lib",
-    "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" NODE_NO_WARNINGS=1 jest",
-    "build": "tsc -p tsconfig.prod.json"
-  },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "exports": {
-    ".": "./lib/random.js"
-  },
-  "types": "./lib/random.d.ts",
-  "files": [
-    "/lib",
-    "!/lib/**/*.js.map",
-    "!/lib/*.js.map",
-    "!/lib/**/*.test.*",
-    "!/lib/**/*.spec.*"
-  ],
-  "devDependencies": {
-    "@types/jest": "^29.5.12",
-    "jest": "^29.7.0",
-    "typescript": "^5.4.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brendangooch/random.git"
-  },
-  "homepage": "https://github.com/brendangooch/random#readme",
-  "bugs": {
-    "url": "https://github.com/brendangooch/random/issues",
-    "email": "brendangooch@gmail.com"
-  },
-  "keywords": []
+    "name": "@brendangooch/random",
+    "version": "2.0.0",
+    "description": "a small collection of random number/array eleement generators",
+    "author": "B Gooch <brendangooch@gmail.com>",
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "build": "tsc -p tsconfig.prod.json",
+        "build-dev": "npm run prebuild && tsc",
+        "prebuild": "npm run remove-lib",
+        "prepack": "npm run build",
+        "remove-lib": "rm -rf lib"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "exports": {
+        ".": "./lib/index.js"
+    },
+    "types": "./lib/index.d.ts",
+    "files": [
+        "/lib"
+    ],
+    "devDependencies": {
+        "typescript": "^5.7.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brendangooch/random.git"
+    },
+    "homepage": "https://github.com/brendangooch/random#readme",
+    "bugs": {
+        "url": "https://github.com/brendangooch/random/issues",
+        "email": "brendangooch@gmail.com"
+    },
+    "keywords": []
 }

@@ -1,0 +1,10 @@
+v1.1.0
+    added integerExcluding(min, max, excluding)
+
+v2.0.0
+    updated to latest config templates
+    replaced random.ts with index.ts barrel file and separated functions into their own files
+    each function renamed to random<functionName>()
+    added randomElementExcluding<T>(arr: T[], excluded: T[]): T function
+    added randomNumberWeighted(values: { value: number; weight: number }[]): number function
+    tested manually in browser
